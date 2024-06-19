@@ -56,10 +56,15 @@ function joursFeries(year: number, options: { zone: Zones } = { zone: "métropol
   }
 }
 
-function isJourFerie(
-  date: Date, 
-  options: { zone: Zones } = { zone: "métropole" }
-):boolean {
+/**
+ * Check if a date is a holiday in France.
+ *
+* @param date date you're interested in
+ * @param options the zone you're interested in ("métropole" by default)
+ */
+function isJourFerie(date: Date): boolean
+function isJourFerie(date: Date, options: { zone: Zones } = { zone: "métropole" } ): boolean 
+{
   const year = date.getFullYear()
   let joursFeriesByYear;
   if (options.zone === "alsace-moselle") {
