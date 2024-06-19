@@ -59,7 +59,7 @@ function joursFeries(year: number, options: { zone: Zones } = { zone: "métropol
 function isJourFerie(
   date: Date, 
   options: { zone: Zones } = { zone: "métropole" }
-) {
+):boolean {
   const year = date.getFullYear()
   let joursFeriesByYear;
   if (options.zone === "alsace-moselle") {
